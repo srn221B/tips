@@ -20,6 +20,6 @@ spec:
 ```
 - dashboardにログインするためのtokenを作る
   - k create sa -n kubernetes-dashboard admin-user
-  - k create clusterrolebinding kubernetes-dashboard-admin --serviceaccount=namespace:admin-user --clusterrole=cluster-admin
+  - k create clusterrolebinding kubernetes-dashboard-admin --serviceaccount=kubernetes-dashboard:admin-user --clusterrole=cluster-admin
   - k describe secret -n kubernetes-dashboard admin-user-token-xnsxq   | grep token: | awk '{print $2}'
 - 
